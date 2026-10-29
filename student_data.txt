@@ -1,0 +1,191 @@
+SELECT 'Laptop' AS product, 2 AS quantity, 100000 AS amount
+UNION ALL
+SELECT 'Mobile', 3, 60000
+UNION ALL
+SELECT 'Headphones', 5, 15000
+UNION ALL
+SELECT 'Keyboard', 4, 8000;
+WITH sales AS (
+  SELECT 'Laptop' AS product, 2 AS quantity, 100000 AS amount
+  UNION ALL
+  SELECT 'Mobile', 3, 60000
+  UNION ALL
+  SELECT 'Headphones', 5, 15000
+  UNION ALL
+  SELECT 'Keyboard', 4, 8000
+)
+SELECT SUM(amount) AS total_amount
+FROM sales;
+
+WITH sales AS (
+  SELECT 'Laptop' AS product, 2 AS quantity, 100000 AS amount
+  UNION ALL
+  SELECT 'Mobile', 3, 60000
+  UNION ALL
+  SELECT 'Headphones', 5, 15000
+  UNION ALL
+  SELECT 'Keyboard', 4, 8000
+)
+SELECT AVG(amount) AS average_price
+FROM sales;
+
+SELECT CURRENT_DATE() AS today_date;
+
+SELECT UPPER('laptop') AS uppercase_word;
+
+SELECT LENGTH('Laptop') AS word_length;
+
+SELECT 100 AS Student_Id, 'Karthik' AS StudentName, 20 AS Age
+UNION ALL
+SELECT 101, 'Latha', 23
+UNION ALL
+SELECT 102, 'Poojitha', 21
+UNION ALL
+SELECT 103, 'Kaviya', 24
+UNION ALL
+SELECT 104, 'Twinkle', 26;
+
+SELECT
+  50 + 50 AS addition,
+  50 - 50 AS subtraction,
+  50 * 50 AS multiplication,
+  50 / 50 AS division;
+
+SELECT
+  10 > 5 AS greater_than,
+  10 < 5 AS less_than,
+  10 = 5 AS equal_to,
+  10 != 5 AS not_equal_to;
+
+SELECT
+  101 AS Product_ID,
+  'Laptop' AS Product_Name,
+  'Electronics' AS Category,
+  50000 AS Price
+UNION ALL
+SELECT 102, 'Mobile', 'Electronics', 2425
+UNION ALL
+SELECT 103, 'Chair', 'Furniture', 1554
+UNION ALL
+SELECT 104, 'Notebook', 'Stationery', 5035
+UNION ALL
+SELECT 105, 'Headphones', 'Accessories', 1231;
+
+SELECT
+  'Laptop' AS Product,
+  5 AS total_unit,
+  5000 AS Price,
+  5 * 5000 AS total_price;
+
+SELECT 'Hello my dear' AS message;
+
+SELECT
+  '100' AS Student_Id,
+  'Laptop' AS Product,
+  5 AS total_unit,
+  5000 AS Price;
+
+SELECT
+  'Rahul' AS student_name,
+  70 AS marks,
+  CASE
+    WHEN 70 >= 90 THEN 'A+'
+    WHEN 70 >= 80 THEN 'A'
+    WHEN 70 >= 70 THEN 'B'
+    WHEN 70 >= 60 THEN 'C'
+    WHEN 70 >= 35 THEN 'D'
+    ELSE 'F'
+  END AS grade;
+
+SELECT
+  'Rahul' AS student_name,
+  70 AS marks,
+  CASE
+    WHEN 70 >= 90 THEN 'A+'
+    WHEN 70 >= 80 THEN 'A'
+    WHEN 70 >= 70 THEN 'B'
+    WHEN 70 >= 60 THEN 'C'
+    WHEN 70 >= 35 THEN 'D'
+    ELSE 'F'
+  END AS grade;
+
+SELECT
+  'Priya' AS student_name,
+  28 AS marks,
+  CASE
+    WHEN 28 >= 35 THEN 'PASS'
+    ELSE 'FAIL'
+  END AS result;
+
+SELECT
+  'Amit' AS employee_name,
+  45000 AS salary,
+  CASE
+    WHEN 45000 >= 60000 THEN 'High Salary'
+    WHEN 45000 >= 30000 THEN 'Medium Salary'
+    ELSE 'Low Salary'
+  END AS salary_category;
+
+SELECT
+  'Karthik' AS name,
+  23 AS age,
+  CASE
+    WHEN 23 < 13 THEN 'Child'
+    WHEN 23 < 20 THEN 'Teenager'
+    WHEN 23 < 60 THEN 'Adult'
+    ELSE 'Senior Citizen'
+  END AS age_category;
+
+SELECT
+  'Rahul' AS student_name,
+  70 AS marks,
+  CASE
+    WHEN 70 >= 90 THEN 'A+'
+    WHEN 70 >= 80 THEN 'A'
+    WHEN 70 >= 70 THEN 'B'
+    WHEN 70 >= 60 THEN 'C'
+    WHEN 70 >= 35 THEN 'D'
+    ELSE 'F'
+  END AS grade;
+
+SELECT
+  3 AS day_number,
+  CASE 3
+    WHEN 1 THEN 'Monday'
+    WHEN 2 THEN 'Tuesday'
+    WHEN 3 THEN 'Wednesday'
+    WHEN 4 THEN 'Thursday'
+    WHEN 5 THEN 'Friday'
+    WHEN 6 THEN 'Saturday'
+    WHEN 7 THEN 'Sunday'
+    ELSE 'Invalid Day'
+  END AS day_name;
+
+SELECT
+  'Rahul' AS first_name,
+  'Sharma' AS last_name,
+  CONCAT('Rahul', ' ', 'Sharma') AS full_name;
+
+SELECT REGEXP_REPLACE(
+  'Hello     my     dear',
+  r'\s+',
+  ' '
+) AS result;
+
+SELECT SUBSTR('Google Cloud', 1, 6) AS result;
+
+SELECT COUNT(*) AS total_values
+FROM (
+  SELECT 'Laptop' AS product
+  UNION ALL
+  SELECT 'Mobile'
+  UNION ALL
+  SELECT 'Keyboard'
+  UNION ALL
+  SELECT 'Mouse'
+);
+
+SELECT number
+FROM UNNEST([50, 20, 40, 10, 30]) AS number
+ORDER BY number ASC;
+
